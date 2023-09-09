@@ -2,9 +2,6 @@ return {
     -- git integration
     'tpope/vim-fugitive',
 
-    -- indentation auto-config
-    'tpope/vim-sleuth',
-
      -- "gc" to comment visual regions/lines
      { 'numToStr/Comment.nvim', opts = {} },
 
