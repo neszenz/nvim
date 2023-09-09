@@ -74,6 +74,6 @@ return {
         vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
         vim.opt.foldnestmax = 99
         vim.opt.foldlevelstart = 99
-        vim.opt.foldminlines = 0
+        vim.opt.foldminlines = 1
     end
 }

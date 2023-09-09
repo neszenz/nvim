@@ -1,6 +1,7 @@
 vim.g.mapleader = ' '
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
+vim.keymap.set('n', '<leader>r', ':bufdo e<CR>', { desc = 'bufdo e' })
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.keymap.set('n', '<leader>gs', ':Git<CR>_', {})
 
 -- Remap for dealing with word wrap
