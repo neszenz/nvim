@@ -46,7 +46,7 @@ return {
                 vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
             end
 
-            nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+            --nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
             nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
             nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
@@ -84,6 +84,7 @@ return {
         --  define the property 'filetypes' to the map in question.
         local servers = {
             clangd = {},
+            cmake = {},
             -- gopls = {},
             -- pyright = {},
             -- rust_analyzer = {},
