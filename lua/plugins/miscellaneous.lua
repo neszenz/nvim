@@ -2,8 +2,19 @@ return {
     -- git integration
     'tpope/vim-fugitive',
 
-     -- "gc" to comment visual regions/lines
-     { 'numToStr/Comment.nvim', opts = {} },
+    -- "gc" to comment visual regions/lines
+    { 'numToStr/Comment.nvim', opts = {} },
+
+    {
+        'phaazon/hop.nvim',
+        branch = 'v2', -- optional but strongly recommended
+        config = function()
+            local hop = require('hop')
+            --local directions = require('hop.hint').HintDirection
+            hop.setup { keys = 'fjdkghsleia;x,wovnqp' }
+            vim.keymap.set({'n', 'v'}, 's', function() hop.hint_words() end, {})
+        end
+    },
 
     -- pending keybinding viewer
     {
