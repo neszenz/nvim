@@ -20,7 +20,7 @@ vim.opt.updatetime = 250
 vim.opt.timeout = true
 vim.opt.timeoutlen = 300
 
-vim.opt.completeopt = 'menuone,noselect'
+vim.opt.completeopt = 'menuone'
 
 vim.opt.termguicolors = true
 
