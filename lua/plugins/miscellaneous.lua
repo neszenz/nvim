@@ -10,9 +10,10 @@ return {
         branch = 'v2', -- optional but strongly recommended
         config = function()
             local hop = require('hop')
-            --local directions = require('hop.hint').HintDirection
+            local directions = require('hop.hint').HintDirection
             hop.setup { keys = 'fjdkghsleia;x,wovnqp' }
-            vim.keymap.set({'n', 'v'}, 's', function() hop.hint_words() end, {})
+            vim.keymap.set({'n', 'v'}, '\\w', function() hop.hint_words( {direction = directions.AFTER_CURSOR} ) end, {})
+            vim.keymap.set({'n', 'v'}, '\\b', function() hop.hint_words( {direction = directions.BEFORE_CURSOR} ) end, {})
         end
     },
 
