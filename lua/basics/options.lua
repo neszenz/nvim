@@ -10,6 +10,7 @@ vim.opt.swapfile = false
 vim.opt.undofile = true
 
 vim.opt.signcolumn = 'yes'
+vim.opt.colorcolumn='81,121'
 
 vim.opt.mouse = 'n'
 

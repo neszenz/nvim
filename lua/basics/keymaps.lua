@@ -1,5 +1,4 @@
 vim.g.mapleader = ' '
-vim.keymap.set({'n', 'v', 'i'}, '<ESC>', '<NOP>')
 
 vim.keymap.set('n', '<leader>r', ':bufdo e<CR>', { desc = 'bufdo e' })
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
