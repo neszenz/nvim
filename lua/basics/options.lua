@@ -38,6 +38,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     pattern = '*',
 })
 
+vim.opt.viewoptions = 'cursor,folds'
+vim.cmd[[autocmd BufWinEnter ?* silent! loadview]]
+vim.cmd[[autocmd BufWinLeave ?* mkview]]
+
 -- Auto-Commands for testing
 --vim.cmd[[autocmd BufRead * echo 'BufRead']]
 --vim.cmd[[autocmd BufWrite * echo 'BufWrite']]
