@@ -1,7 +1,6 @@
 vim.g.mapleader = ' '
 
-vim.keymap.set('n', '<leader>r', ':bufdo e<CR>', { desc = 'bufdo e' })
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+vim.keymap.set('n', '<leader>pv', ":RnvimrToggle<CR>")
 vim.keymap.set('n', '<leader>gs', ':Git<CR>_', {})
 vim.keymap.set('n', '<leader>gd', ':Git diff<CR>_', {})
 vim.keymap.set('n', '<leader>gD', ':Git diff --staged<CR>_', {})

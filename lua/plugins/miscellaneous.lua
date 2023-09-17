@@ -2,20 +2,10 @@ return {
     -- git integration
     'tpope/vim-fugitive',
 
+    "kevinhwang91/rnvimr",
+
     -- "gc" to comment visual regions/lines
     { 'numToStr/Comment.nvim', opts = {} },
-
-    {
-        'phaazon/hop.nvim',
-        branch = 'v2', -- optional but strongly recommended
-        config = function()
-            local hop = require('hop')
-            local directions = require('hop.hint').HintDirection
-            hop.setup { keys = 'fjdkghsleia;x,wovnqp' }
-            vim.keymap.set({'n', 'v'}, '\\w', function() hop.hint_words( {direction = directions.AFTER_CURSOR} ) end, {})
-            vim.keymap.set({'n', 'v'}, '\\b', function() hop.hint_words( {direction = directions.BEFORE_CURSOR} ) end, {})
-        end
-    },
 
     -- pending keybinding viewer
     {
@@ -31,6 +21,18 @@ return {
             char = '┊',
             show_trailing_blankline_indent = false,
         },
+    },
+
+    {
+        'phaazon/hop.nvim',
+        branch = 'v2', -- optional but strongly recommended
+        config = function()
+            local hop = require('hop')
+            local directions = require('hop.hint').HintDirection
+            hop.setup { keys = 'fjdkghsleia;x,wovnqp' }
+            vim.keymap.set({'n', 'v'}, '\\w', function() hop.hint_words( {direction = directions.AFTER_CURSOR} ) end, {})
+            vim.keymap.set({'n', 'v'}, '\\b', function() hop.hint_words( {direction = directions.BEFORE_CURSOR} ) end, {})
+        end
     },
 
     -- Adds git related signs to the gutter, as well as utilities for managing changes
