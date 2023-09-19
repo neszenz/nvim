@@ -1,5 +1,8 @@
 vim.g.mapleader = ' '
 
+vim.keymap.set('n', 'gt', ':tabnext<CR>', { desc = 'Next tab' })
+vim.keymap.set('n', 'gT', ':tabprevious<CR>', { desc = 'Previous tab' })
+
 vim.keymap.set('n', '<leader>pv', ":RnvimrToggle<CR>")
 vim.keymap.set('n', '<leader>gs', ':Git<CR>_', {})
 vim.keymap.set('n', '<leader>gd', ':Git diff<CR>_', {})
