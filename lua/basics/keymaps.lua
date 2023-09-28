@@ -36,11 +36,9 @@ vim.keymap.set({'n','v','i'}, '<M-C-i>', '8', {})
 vim.keymap.set({'n','v','i'}, '<M-C-o>', '9', {})
 
 -- Read the the line specified by offset from file and execute it as command
-local function exec_vaction(action_offset)
+local function exec_vaction(action_offset, mode)
     local cmd_file_path = '.vactions'
-
     local file = io.open(cmd_file_path, 'r')
-
     if file then
         local line_counter = 1
         while line_counter <= action_offset do
@@ -52,8 +50,18 @@ local function exec_vaction(action_offset)
             end
 
             if line_counter == action_offset then
-                print("Execute vaction #"..action_offset..": '"..line.."'")
-                io.popen(line)
+                local header = "vaction_"..action_offset.." >> "..line
+
+                if mode == 0 then
+                    print(header)
+                    io.popen(line)
+                elseif mode == 1 then
+                    local cmd = "echo '"..header.."' && "..line
+                    vim.cmd(":term "..cmd)
+                    vim.cmd(":startinsert");
+                elseif mode == 2 then
+                    vim.cmd(":! echo -e '' && "..line)
+                end
             end
 
             line_counter = line_counter + 1
@@ -63,15 +71,28 @@ local function exec_vaction(action_offset)
     end
 end
 
-vim.keymap.set({'n','v','i'}, '<F1>', function() exec_vaction(1) end)
-vim.keymap.set({'n','v','i'}, '<F2>', function() exec_vaction(2) end)
-vim.keymap.set({'n','v','i'}, '<F3>', function() exec_vaction(3) end)
-vim.keymap.set({'n','v','i'}, '<F4>', function() exec_vaction(4) end)
-vim.keymap.set({'n','v','i'}, '<F5>', function() exec_vaction(5) end)
-vim.keymap.set({'n','v','i'}, '<F6>', function() exec_vaction(6) end)
-vim.keymap.set({'n','v','i'}, '<F7>', function() exec_vaction(7) end)
-vim.keymap.set({'n','v','i'}, '<F8>', function() exec_vaction(8) end)
-vim.keymap.set({'n','v','i'}, '<F9>', function() exec_vaction(9) end)
-vim.keymap.set({'n','v','i'}, '<F10>', function() exec_vaction(10) end)
-vim.keymap.set({'n','v','i'}, '<F11>', function() exec_vaction(11) end)
-vim.keymap.set({'n','v','i'}, '<F12>', function() exec_vaction(12) end)
+vim.keymap.set({'n','v','i'}, '<F1>', function() exec_vaction(1, 0) end)
+vim.keymap.set({'n','v','i'}, '<F2>', function() exec_vaction(2, 0) end)
+vim.keymap.set({'n','v','i'}, '<F3>', function() exec_vaction(3, 0) end)
+vim.keymap.set({'n','v','i'}, '<F4>', function() exec_vaction(4, 0) end)
+vim.keymap.set({'n','v','i'}, '<F5>', function() exec_vaction(5, 0) end)
+vim.keymap.set({'n','v','i'}, '<F6>', function() exec_vaction(6, 0) end)
+vim.keymap.set({'n','v','i'}, '<F7>', function() exec_vaction(7, 0) end)
+vim.keymap.set({'n','v','i'}, '<F8>', function() exec_vaction(8, 0) end)
+vim.keymap.set({'n','v','i'}, '<F9>', function() exec_vaction(9, 0) end)
+vim.keymap.set({'n','v','i'}, '<F10>', function() exec_vaction(10, 0) end)
+vim.keymap.set({'n','v','i'}, '<F11>', function() exec_vaction(11, 0) end)
+vim.keymap.set({'n','v','i'}, '<F12>', function() exec_vaction(12, 0) end)
+
+vim.keymap.set({'n','v','i'}, '<F13>', function() exec_vaction(1, 1) end)
+vim.keymap.set({'n','v','i'}, '<F14>', function() exec_vaction(2, 1) end)
+vim.keymap.set({'n','v','i'}, '<F15>', function() exec_vaction(3, 1) end)
+vim.keymap.set({'n','v','i'}, '<F16>', function() exec_vaction(4, 1) end)
+vim.keymap.set({'n','v','i'}, '<F17>', function() exec_vaction(5, 1) end)
+vim.keymap.set({'n','v','i'}, '<F18>', function() exec_vaction(6, 1) end)
+vim.keymap.set({'n','v','i'}, '<F19>', function() exec_vaction(7, 1) end)
+vim.keymap.set({'n','v','i'}, '<F20>', function() exec_vaction(8, 1) end)
+vim.keymap.set({'n','v','i'}, '<F21>', function() exec_vaction(9, 1) end)
+vim.keymap.set({'n','v','i'}, '<F22>', function() exec_vaction(10, 1) end)
+vim.keymap.set({'n','v','i'}, '<F23>', function() exec_vaction(11, 1) end)
+vim.keymap.set({'n','v','i'}, '<F24>', function() exec_vaction(12, 1) end)
