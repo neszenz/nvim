@@ -4,7 +4,7 @@ vim.keymap.set('n', 'gt', ':tabnext<CR>', { desc = 'Next tab' })
 vim.keymap.set('n', 'gT', ':tabprevious<CR>', { desc = 'Previous tab' })
 
 vim.keymap.set('n', '<leader>pv', ":RnvimrToggle<CR>")
-vim.keymap.set('n', '<leader>gs', ':Git<CR>_', {})
+vim.keymap.set('n', '<leader>gs', ':tabe<CR>:Git<CR>j:q<CR>', {})
 vim.keymap.set('n', '<leader>gd', ':Git diff<CR>_', {})
 vim.keymap.set('n', '<leader>gD', ':Git diff --staged<CR>_', {})
 
