@@ -5,6 +5,7 @@ return {
     config = function()
         local builtin = require('telescope.builtin')
 
+        vim.keymap.set('n', '<leader>;', builtin.command_history, { desc = 'Telescope command_history' })
         vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = 'Telescope oldfiles' })
         vim.keymap.set('n', '<leader>/', function()
             builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
