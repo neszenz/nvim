@@ -84,14 +84,11 @@ return {
         --  define the property 'filetypes' to the map in question.
         local servers = {
             bashls = {},
-            clangd = {},
+            clangd = {
+                cmd = {'clangd', '--header-insertion=never'}
+            },
             cmake = {},
-            -- gopls = {},
-            -- pyright = {},
             rust_analyzer = {},
-            -- tsserver = {},
-            -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
             lua_ls = {
                 Lua = {
                     workspace = { checkThirdParty = false },
@@ -121,6 +118,7 @@ return {
                     on_attach = on_attach,
                     settings = servers[server_name],
                     filetypes = (servers[server_name] or {}).filetypes,
+                    cmd = (servers[server_name] or {}).cmd,
                 }
             end
         }

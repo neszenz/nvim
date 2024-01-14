@@ -1,4 +1,6 @@
 return {
+    'ThePrimeagen/vim-be-good',
+
     -- git integration
     'tpope/vim-fugitive',
 
