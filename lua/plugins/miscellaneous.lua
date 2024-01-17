@@ -19,17 +19,25 @@ return {
     -- pending keybinding viewer
     {
         "folke/which-key.nvim",
-        event = "VeryLazy",
+        event = #vim.fn.argv() > 0 and "VeryLazy" or "UIEnter", -- Hack to avoid VeryLazy clearing the welcome message
+        init = function ()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+
+        end,
         opts = {}
     },
 
     -- Add indentation guides even on blank lines
     {
         'lukas-reineke/indent-blankline.nvim',
-        opts = {
-            char = '┊',
-            show_trailing_blankline_indent = false,
-        },
+        main = 'ibl',
+        config = {
+            indent = {
+                char = '┊',
+                tab_char = '║'
+            }
+        }
     },
 
     {

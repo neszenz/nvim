@@ -1,6 +1,6 @@
 return {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.2',
+    tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
         local builtin = require('telescope.builtin')
@@ -27,15 +27,5 @@ return {
 
         -- Enable telescope fzf native if installed
         pcall(require('telescope').load_extension, 'fzf')
-
-        -- Fix error ('E490: No fold found') on opening new files via telescope
-        vim.api.nvim_create_autocmd('BufRead', {
-            callback = function()
-                vim.api.nvim_create_autocmd('BufWinEnter', {
-                    once = true,
-                    command = 'normal! zx'
-                })
-            end
-        })
     end
 }
