@@ -35,8 +35,11 @@ return {
         config = {
             indent = {
                 char = '┊',
-                tab_char = '║'
-            }
+                tab_char = '║',
+            },
+            scope = {
+                enabled = false,
+            },
         }
     },
 
