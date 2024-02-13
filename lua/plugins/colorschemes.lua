@@ -2,9 +2,23 @@ return {
     {
         'navarasu/onedark.nvim',
         config = function()
+            local palette = require('onedark.palette').cool
+            local hl_overrides ={
+                TelescopeResultsBorder = {
+                    fg = palette.bg3
+                },
+                TelescopePromptBorder = {
+                    fg = palette.bg3
+                },
+                TelescopePreviewBorder = {
+                    fg = palette.bg3
+                }
+            }
+
             require('onedark').setup {
                 style = 'cool',
-                transparent = true
+                transparent = true,
+                highlights = hl_overrides
             }
             require('onedark').load()
         end
