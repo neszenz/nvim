@@ -29,11 +29,11 @@ vim.keymap.set('n', 'N', 'Nzz')
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setqflist, { desc = 'Open diagnostics list' })
 
 -- Quickfix keymaps
-vim.keymap.set('n', '[c', ':cp<CR>', { desc = ':cprevious' })
-vim.keymap.set('n', ']c', ':cn<CR>', { desc = ':cnext' })
+vim.keymap.set('n', '[c', ':cprevious<CR>', { desc = ':cprevious' })
+vim.keymap.set('n', ']c', ':cnext<CR>', { desc = ':cnext' })
 
 -- Random custom stuff and experimentation
 vim.keymap.set('i', '#<', '#include <><esc>i', {})
