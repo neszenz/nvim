@@ -20,7 +20,7 @@ return {
                 transparent = true,
                 highlights = hl_overrides
             }
-            require('onedark').load()
+            -- require('onedark').load()
         end
     },
     {
@@ -28,7 +28,7 @@ return {
         config = function ()
             require('everforest').setup {
                 background = "hard",
-                transparent_background_level = 1,
+                transparent_background_level = 0,
                 ui_contrast = "high",
             }
             -- require('everforest').load()
@@ -54,9 +54,20 @@ return {
         'rebelot/kanagawa.nvim',
         config = function ()
             require("kanagawa").setup {
-                transparent = true,
+                transparent = false,
             }
             -- vim.cmd[[colorscheme kanagawa]]
+        end
+    },
+    {
+        'EdenEast/nightfox.nvim',
+        config = function ()
+            require('nightfox').setup {
+                options = {
+                    transparent = false,
+                }
+            }
+            vim.cmd [[ colorscheme nordfox ]]
         end
     },
 
