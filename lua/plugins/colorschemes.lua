@@ -20,7 +20,7 @@ return {
                 transparent = true,
                 highlights = hl_overrides
             }
-            -- require('onedark').load()
+            require('onedark').load()
         end
     },
     {
@@ -67,11 +67,18 @@ return {
                     transparent = false,
                 }
             }
-            vim.cmd [[ colorscheme nordfox ]]
+            -- vim.cmd [[ colorscheme nordfox ]]
         end
     },
 
-    'Mofiqul/vscode.nvim',
+    {
+        'Mofiqul/vscode.nvim',
+        config = function ()
+            require('vscode').setup{
+                transparent = true,
+            }
+        end
+    },
 
     'gibfahn/gib-noir.nvim',
 }
