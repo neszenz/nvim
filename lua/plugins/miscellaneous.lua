@@ -32,7 +32,7 @@ return {
     {
         'lukas-reineke/indent-blankline.nvim',
         main = 'ibl',
-        config = {
+        opts = {
             indent = {
                 char = '┊',
                 tab_char = '║',
@@ -94,7 +94,7 @@ return {
 
     {
         'anuvyklack/pretty-fold.nvim',
-        config = {
+        opts = {
             sections = {
                 left = {
                     'content',
