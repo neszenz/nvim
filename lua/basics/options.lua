@@ -14,7 +14,7 @@ vim.opt.undofile = true
 vim.opt.signcolumn = 'yes'
 vim.opt.colorcolumn='81,121'
 
-vim.opt.mouse = 'n'
+vim.opt.mouse = 'nv'
 
 vim.opt.breakindent = true
 
