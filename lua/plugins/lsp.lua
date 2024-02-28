@@ -85,6 +85,7 @@ return {
         local servers = {
             bashls = {},
             clangd = {
+                filetypes = { 'c', 'cpp' },
                 cmd = {'clangd', '--header-insertion=never'}
             },
             neocmake = {},
