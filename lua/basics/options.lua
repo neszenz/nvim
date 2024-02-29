@@ -1,6 +1,7 @@
 vim.opt.number = true
+
 vim.opt.relativenumber = true
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.inccommand='split'
 vim.opt.wrap = false
@@ -20,7 +21,7 @@ vim.opt.mouse = 'nv'
 
 vim.opt.breakindent = true
 
-vim.opt.ignorecase = true
+vim.opt.ignorecase = false
 vim.opt.smartcase = true
 
 vim.opt.updatetime = 250
