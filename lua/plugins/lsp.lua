@@ -88,6 +88,7 @@ return {
                 filetypes = { 'c', 'cpp' },
                 cmd = {'clangd', '--header-insertion=never'}
             },
+            zls = {},
             neocmake = {},
             rust_analyzer = {},
             lua_ls = {
