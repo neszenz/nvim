@@ -21,7 +21,7 @@ vim.opt.mouse = 'nv'
 
 vim.opt.breakindent = true
 
-vim.opt.ignorecase = false
+vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.updatetime = 250
