@@ -9,7 +9,7 @@ return {
             vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle left<CR>', { buffer = bufnr})
         end,
         keymaps = {
-            ["?"] = "actions.show_help",
+            ["?"] = false,
             ["<CR>"] = "actions.jump",
             ["p"] = "actions.scroll",
             ["<S-j>"] = "actions.down_and_scroll",
