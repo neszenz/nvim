@@ -20,8 +20,14 @@ vim.keymap.set('n', '<C-->', '<C-w>_', {})
 vim.keymap.set('n', '<C-=>', '<C-w>=', {})
 
 -- Keeping it in center
-vim.keymap.set('n', '<C-d>', '<C-d>zz')
-vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', '<C-d>', function ()
+    local n = tonumber(vim.wo.scroll) - 1
+    vim.cmd.normal(tostring(n).."jzz")
+end)
+vim.keymap.set('n', '<C-u>', function ()
+    local n = tonumber(vim.wo.scroll) - 1
+    vim.cmd.normal(tostring(n).."kzz")
+end)
 vim.keymap.set('n', 'n', 'nzz')
 vim.keymap.set('n', 'N', 'Nzz')
 
