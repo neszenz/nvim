@@ -46,7 +46,7 @@ vim.keymap.set('i', '#<', '#include <><esc>i', {})
 vim.keymap.set('i', '#"', '#include ""<esc>i', {})
 
 vim.keymap.set({'i'}, '<M-Space>', '  i', {})
-vim.keymap.set({'i'}, '<M-BS>', '<BS><Del>', {})
+vim.keymap.set({'i'}, '<M-BS>', '2cl', {})
 
 vim.keymap.set({'i'}, '<C-l>', '<Del>', {})
 
