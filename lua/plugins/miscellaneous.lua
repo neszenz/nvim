@@ -13,7 +13,7 @@ return {
 
     "kevinhwang91/rnvimr",
 
-    -- "gc" to comment visual regions/lines
+    -- gc and gb to comment visual regions/lines
     { 'numToStr/Comment.nvim', opts = {} },
 
     -- pending keybinding viewer
