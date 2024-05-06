@@ -135,3 +135,20 @@ vim.keymap.set({'n','v','i'}, '<S-F9>', function() exec_vaction(9, 1) end)
 vim.keymap.set({'n','v','i'}, '<S-F10>', function() exec_vaction(10, 1) end)
 vim.keymap.set({'n','v','i'}, '<S-F11>', function() exec_vaction(11, 1) end)
 vim.keymap.set({'n','v','i'}, '<S-F12>', function() exec_vaction(12, 1) end)
+
+local function toggleNotes()
+    local current_buffer = vim.api.nvim_get_current_buf()
+
+    local current_buffer_basename = vim.fs.basename(vim.api.nvim_buf_get_name(current_buffer))
+    local notes_file_basename = '.vnotes.md'
+
+    if current_buffer_basename == notes_file_basename then
+        print('Update and leave vnotes')
+        vim.cmd(':update | :bwipeout')
+    else
+        print('Enter vnotes for '..vim.fn.getcwd())
+        vim.cmd(':drop ' .. notes_file_basename)
+    end
+end
+
+vim.keymap.set('n', '<leader>n', toggleNotes, { desc = 'Toggle vnotes' })
