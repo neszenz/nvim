@@ -39,7 +39,6 @@ vim.keymap.set('n', ']d', ':lua vim.diagnostic.goto_next()<CR>zz', { desc = 'Go 
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setqflist, { desc = 'Open diagnostics list' })
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.code_action, { desc = 'Perform code action' })
-vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { desc = 'LSP rename' })
 
 -- Random custom stuff and experimentation
 vim.keymap.set('i', '#<', '#include <><esc>i', {})
