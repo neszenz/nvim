@@ -4,7 +4,7 @@ vim.keymap.set('n', 'gt', ':tabnext<CR>', { desc = 'Next tab' })
 vim.keymap.set('n', 'gT', ':tabprevious<CR>', { desc = 'Previous tab' })
 
 vim.keymap.set('n', '<leader>pv', ":RnvimrToggle<CR>")
-vim.keymap.set('n', '<leader>gs', ':tabe<CR>:Git<CR>j:q<CR>', {})
+vim.keymap.set('n', '<leader>gg', ':tabe<CR>:Git<CR>j:q<CR>', {})
 vim.keymap.set('n', '<leader>gd', ':Git diff<CR>_', {})
 vim.keymap.set('n', '<leader>gD', ':Git diff --staged<CR>_', {})
 
@@ -38,14 +38,13 @@ vim.keymap.set('n', '[d', ':lua vim.diagnostic.goto_prev()<CR>zz', { desc = 'Go 
 vim.keymap.set('n', ']d', ':lua vim.diagnostic.goto_next()<CR>zz', { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setqflist, { desc = 'Open diagnostics list' })
-vim.keymap.set('n', '<leader>f', vim.lsp.buf.code_action, { desc = 'Perform code action' })
 
 -- Random custom stuff and experimentation
-vim.keymap.set('i', '#<', '#include <><esc>i', {})
-vim.keymap.set('i', '#"', '#include ""<esc>i', {})
+vim.keymap.set('i', '\\#<', '#include <><esc>i', {})
+vim.keymap.set('i', '\\#"', '#include ""<esc>i', {})
 
-vim.keymap.set({'i'}, '<M-Space>', '  i', {})
-vim.keymap.set({'i'}, '<M-BS>', '2cl', {})
+vim.keymap.set({'i'}, '\\k', '  i', {})
+vim.keymap.set({'i'}, '\\j', '2cl', {})
 
 vim.keymap.set({'i'}, '<C-l>', '<Del>', {})
 

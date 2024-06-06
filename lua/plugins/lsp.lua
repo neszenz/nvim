@@ -127,7 +127,7 @@ return {
                 end,
             },
             mapping = cmp.mapping.preset.insert {
-                ['<C-Space>'] = cmp.mapping.complete(),
+                ['<C-x><C-m>'] = cmp.mapping.complete(),
                 ['<C-n>'] = cmp.mapping.select_next_item(),
                 ['<C-p>'] = cmp.mapping.select_prev_item(),
                 ['<C-b>'] = cmp.mapping.scroll_docs(-4),
