@@ -40,6 +40,7 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setqflist, { desc = 'Open diagnostics list' })
 
 -- Random custom stuff and experimentation
+vim.keymap.set('i', '<C-\\>', '\\', {})
 vim.keymap.set('i', '\\#<', '#include <><esc>i', {})
 vim.keymap.set('i', '\\#"', '#include ""<esc>i', {})
 
