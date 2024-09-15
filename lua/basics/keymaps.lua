@@ -3,7 +3,6 @@ vim.g.mapleader = ' '
 vim.keymap.set('n', 'gt', ':tabnext<CR>', { desc = 'Next tab' })
 vim.keymap.set('n', 'gT', ':tabprevious<CR>', { desc = 'Previous tab' })
 
-vim.keymap.set('n', '<leader>pv', ":RnvimrToggle<CR>")
 vim.keymap.set('n', '<leader>gg', ':tabe<CR>:Git<CR>j:q<CR>', {})
 vim.keymap.set('n', '<leader>gd', ':Git diff<CR>_', {})
 vim.keymap.set('n', '<leader>gD', ':Git diff --staged<CR>_', {})
@@ -144,7 +143,7 @@ local function toggleVFile(vfile_basename)
         vim.cmd(':update | :bwipeout')
     else
         print('Enter '..vfile_basename..' for '..vim.fn.getcwd())
-        vim.cmd(':drop ' .. vfile_basename)
+        vim.cmd(':drop '..vfile_basename)
     end
 end
 

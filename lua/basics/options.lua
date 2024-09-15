@@ -6,6 +6,7 @@ vim.opt.incsearch = true
 vim.opt.inccommand='split'
 vim.opt.wrap = false
 vim.opt.showmode = false
+vim.opt.modeline = false
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 4

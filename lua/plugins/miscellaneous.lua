@@ -11,22 +11,8 @@ return {
     -- git integration
     'tpope/vim-fugitive',
 
-    "kevinhwang91/rnvimr",
-
     -- gc and gb to comment visual regions/lines
     { 'numToStr/Comment.nvim', opts = {} },
-
-    -- pending keybinding viewer
-    {
-        "folke/which-key.nvim",
-        event = #vim.fn.argv() > 0 and "VeryLazy" or "UIEnter", -- Hack to avoid VeryLazy clearing the welcome message
-        init = function ()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-
-        end,
-        opts = {}
-    },
 
     -- Add indentation guides even on blank lines
     {
@@ -41,19 +27,6 @@ return {
                 enabled = false,
             },
         }
-    },
-
-    {
-        'phaazon/hop.nvim',
-        branch = 'v2', -- optional but strongly recommended
-        config = function()
-            local hop = require('hop')
-            -- local directions = require('hop.hint').HintDirection
-            hop.setup { keys = 'fjdkghsleia;x,wovnqp' }
-            vim.keymap.set({'n', 'v'}, '<leader><leader>', function() hop.hint_words() end, {})
-            -- vim.keymap.set({'n', 'v'}, '\\w', function() hop.hint_words( {direction = directions.AFTER_CURSOR} ) end, {})
-            -- vim.keymap.set({'n', 'v'}, '\\b', function() hop.hint_words( {direction = directions.BEFORE_CURSOR} ) end, {})
-        end
     },
 
     {
