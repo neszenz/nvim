@@ -77,7 +77,6 @@ return {
                 cmd = {'clangd', '--header-insertion=never'}
             },
             zls = {},
-            neocmake = {},
             rust_analyzer = {},
             lua_ls = {
                 Lua = {
