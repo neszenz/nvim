@@ -45,6 +45,8 @@ vim.keymap.set('i', '\\#"', '#include ""<esc>i', {})
 
 vim.keymap.set({'i'}, '\\k', '  i', {})
 vim.keymap.set({'i'}, '\\j', '2cl', {})
+vim.keymap.set({'i', 'n'}, '\\l', 'Ojok$', {})
+vim.keymap.set({'i', 'n'}, '\\h', '0i<BS>A<Del>', {})
 
 vim.keymap.set({'i'}, '<C-l>', '<Del>', {})
 
